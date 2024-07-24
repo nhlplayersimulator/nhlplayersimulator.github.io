@@ -18,7 +18,7 @@ const forwards = [
     "Marcel Dionne", "Steve Yzerman", "Mario Lemieux", "Joe Sakic", "Phil Esposito",
     "Joe Thornton", "Mark Recchi", "Stan Mikita", "Teemu Selanne", "Bryan Trottier", "Adam Oates",
     "Doug Gilmour", "Jari Kurri", "Brett Hull", "Mike Modano", "Guy LaFleur", "Denis Savard",
-    "Jarome Iginla", "Patrick Kane", "Peter Stastny"
+    "Jarome Iginla", "Patrick Kane", "Peter Stastny", "Joe Sakic"
 ];
 
 
