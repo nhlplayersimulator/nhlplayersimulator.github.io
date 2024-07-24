@@ -16,6 +16,7 @@ const forwards = [
     "Tyler Bertuzzi", "Artyom Levshunov", "Michael Bunting"
 ];
 
+
 const defensemen = [
     "Cale Makar", "Roman Josi", "Victor Hedman", "Adam Fox", "Rasmus Dahlin",
     "Mikhail Sergachev", "Noah Dobson", "Dougie Hamilton", "Shea Theodore", "Zach Werenski",
