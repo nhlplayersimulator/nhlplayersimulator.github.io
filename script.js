@@ -9,11 +9,16 @@ const forwards = [
     "Aleksander Barkov", "Alex DeBrincat", "Matt Duchene", "Nick Suzuki", "Brandon Hagel",
     "Timo Meier", "Juraj Slafkovsky", "Evgeni Malkin", "Claude Giroux", "Alex Tuch",
     "Mark Stone", "Ryan O'Reilly", "Logan Stankoven", "Macklin Celebrini", "Will Smith",
-    "Alexis Lafrenière", "Matvei Michkov", "Gabriel Vilardi", "Drake Batherson", "Filip Hronek",
+    "Alexis Lafrenière", "Matvei Michkov", "Gabriel Vilardi", "Drake Batherson",
     "Nick Schmaltz", "Vladimir Tarasenko", "Casey Mittelstadt", "Quinton Byfield", "Jonathan Drouin",
     "Martin Necas", "Tyler Toffoli", "Teuvo Teravainen", "Tom Wilson", "Sam Bennett",
     "Tyler Seguin", "Leo Carlsson", "Dylan Guenther", "Josh Doan", "Mikael Granlund",
-    "Tyler Bertuzzi", "Artyom Levshunov", "Michael Bunting"
+    "Tyler Bertuzzi", "Artyom Levshunov", "Michael Bunting", "Andrew Copp", "Wayne Gretzky", 
+    "Ryan Leonard", "Kevin Korchinski", "Jaromir Jagr", "Mark Messier", "Gordie Howe", "Ron Francis",
+    "Marcel Dionne", "Steve Yzerman", "Mario Lemieux", "Joe Sakic", "Phil Esposito",
+    "Joe Thornton", "Mark Recchi", "Stan Mikita", "Teemu Selanne", "Bryan Trottier", "Adam Oates",
+    "Doug Gilmour", "Jari Kurri", "Brett Hull", "Mike Modano", "Guy LaFleur", "Denis Savard",
+    "Jarome Iginla", "Patrick Kane", "Peter Stastny"
 ];
 
 
@@ -21,14 +26,17 @@ const defensemen = [
     "Cale Makar", "Roman Josi", "Victor Hedman", "Adam Fox", "Rasmus Dahlin",
     "Mikhail Sergachev", "Noah Dobson", "Dougie Hamilton", "Shea Theodore", "Zach Werenski",
     "Brent Burns", "Seth Jones", "Thomas Chabot", "Moritz Seider", "Mike Matheson",
-    "Olli Maatta", "Jakob Chychrun", "Ryan Graves", "Mackenzie Weegar", "Gustav Forsling"
+    "Olli Maatta", "Jakob Chychrun", "Ryan Graves", "Mackenzie Weegar", "Gustav Forsling",
+    "Paul Coffey", "Al MacInnis", "Bobby Orr", "Ray Bourque", "Nicklas Lidstrom", "Denis Potvin",
+    "Filip Hronek"
 ];
 
 const goalies = [
     "Sergei Bobrovsky", "Igor Shesterkin", "Jeremy Swayman", "Thatcher Demko", "Andrei Vasilevskiy",
     "Jake Oettinger", "Connor Hellebuyck", "Alexandar Georgiev", "Stuart Skinner", "Juuse Saros",
     "Adin Hill", "Ukko-Pekka Luukkonen", "Linus Ullmark", "Jordan Binnington", "Semyon Varlamov",
-    "Ilya Samsonov", "Darcy Kuemper", "Charlie Lindgren", "Logan Thompson", "Pyotr Kochetkov"
+    "Ilya Samsonov", "Darcy Kuemper", "Charlie Lindgren", "Logan Thompson", "Pyotr Kochetkov", "Patrick Roy",
+    "Martin Brodeur", "Robert Luongo", "Dominik Hasek", "Jacques Plante"
 ];
 
 const historyList = document.getElementById('historyList');
