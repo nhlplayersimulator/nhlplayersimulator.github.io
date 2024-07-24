@@ -132,6 +132,7 @@ document.getElementById('randomButton2').addEventListener('click', function() {
     updateClickCount();
 });
 
+
 function updateClickCount() {
     document.getElementById('clickCount').textContent = `${totalClicks}`;
 }
@@ -157,4 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('darkMode', isDarkMode);
     });
 });
+
+
 
