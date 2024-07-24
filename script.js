@@ -31,39 +31,36 @@ const goalies = [
 ];
 
 const historyList = document.getElementById('historyList');
+const averageMean = document.getElementById('averageMean');
+let generatedNumbers = [];
 
-// Function to generate a weighted random number
 function getWeightedRandomNumber(min, max) {
-    // Define weight based on the number range
     const weight = (num) => {
-        if (num >= 80 && num <= 83) return 10; // High weight for range 80-83
-        if (num >= 84 && num <= 90) return 3;  // Moderate weight for range 84-90
-        if (num >= 91 && num <= 99) return 1;  // Low weight for range 91-99
-        return 0; // Default weight
+        if (num >= 80 && num <= 83) return 10;
+        if (num >= 84 && num <= 90) return 3;
+        if (num >= 91 && num <= 99) return 1;
+        return 0;
     };
 
-    // Calculate total weight
     const range = max - min + 1;
     const totalWeight = Array.from({ length: range }, (_, i) => weight(min + i)).reduce((a, b) => a + b, 0);
-    
-    // Generate random number based on total weight
     const random = Math.random() * totalWeight;
     let cumulativeWeight = 0;
 
-    // Return number based on weighted probabilities
     for (let i = min; i <= max; i++) {
         cumulativeWeight += weight(i);
         if (random < cumulativeWeight) {
             return i;
-        }
+        } //test
     }
-    return max; // fallback
+    return max; //2
 }
 
-// Example usage
-console.log(getWeightedRandomNumber(80, 99));
-
-
+function updateAverageMean() {
+    const sum = generatedNumbers.reduce((a, b) => a + b, 0);
+    const average = (sum / generatedNumbers.length).toFixed(0);
+    averageMean.textContent = average;
+}
 
 document.getElementById('randomButton').addEventListener('click', function() {
     const randomName = forwards[Math.floor(Math.random() * forwards.length)];
@@ -71,25 +68,36 @@ document.getElementById('randomButton').addEventListener('click', function() {
     const result = `${randomName} - ${randomNumber}`;
     document.getElementById('randomResult').textContent = result;
 
+    generatedNumbers.push(randomNumber);
+    updateAverageMean();
+
     const listItem = document.createElement('li');
     listItem.textContent = result;
     historyList.appendChild(listItem);
 });
+
 document.getElementById('randomButton1').addEventListener('click', function() {
     const randomName = defensemen[Math.floor(Math.random() * defensemen.length)];
     const randomNumber = getWeightedRandomNumber(80, 99);
     const result = `${randomName} - ${randomNumber}`;
     document.getElementById('randomResult1').textContent = result;
 
+    generatedNumbers.push(randomNumber);
+    updateAverageMean();
+
     const listItem = document.createElement('li');
     listItem.textContent = result;
     historyList.appendChild(listItem);
 });
+
 document.getElementById('randomButton2').addEventListener('click', function() {
     const randomName = goalies[Math.floor(Math.random() * goalies.length)];
     const randomNumber = getWeightedRandomNumber(80, 99);
     const result = `${randomName} - ${randomNumber}`;
     document.getElementById('randomResult2').textContent = result;
+
+    generatedNumbers.push(randomNumber);
+    updateAverageMean();
 
     const listItem = document.createElement('li');
     listItem.textContent = result;

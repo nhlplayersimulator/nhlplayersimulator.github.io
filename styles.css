@@ -13,7 +13,7 @@ body {
     text-align: center;
 }
 
-#randomButton {
+#randomButton, #randomButton1, #randomButton2 {
     background-color: red;
     color: white;
     font-size: 24px;
@@ -21,51 +21,14 @@ body {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    margin: 10px;
 }
 
-#randomButton:hover {
+#randomButton:hover, #randomButton1:hover, #randomButton2:hover {
     background-color: darkred;
 }
 
-#randomButton1 {
-    background-color: red;
-    color: white;
-    font-size: 24px;
-    padding: 20px 40px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#randomButton1:hover {
-    background-color: darkred;
-}
-
-#randomButton2 {
-    background-color: red;
-    color: white;
-    font-size: 24px;
-    padding: 20px 40px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#randomButton2:hover {
-    background-color: darkred;
-}
-
-#randomResult {
-    margin-top: 20px;
-    font-size: 32px;
-}
-
-#randomResult1 {
-    margin-top: 20px;
-    font-size: 32px;
-}
-
-#randomResult2 {
+#randomResult, #randomResult1, #randomResult2 {
     margin-top: 20px;
     font-size: 32px;
 }
@@ -84,4 +47,16 @@ body {
 #historyList li {
     font-size: 16px;
     margin: 5px 0;
+}
+
+.average-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+#averageMean {
+    font-size: 32px;
+    margin: 0;
 }
