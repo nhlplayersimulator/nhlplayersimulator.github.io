@@ -135,3 +135,25 @@ document.getElementById('randomButton2').addEventListener('click', function() {
 function updateClickCount() {
     document.getElementById('clickCount').textContent = `${totalClicks}`;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeSwitch = document.getElementById('darkModeSwitch');
+    const historyContainer = document.querySelector('.history-container');
+    const averageContainer = document.querySelector('.average-container');
+
+    // Apply dark mode by default
+    const darkMode = localStorage.getItem('darkMode') !== 'false';
+    if (darkMode) {
+        document.body.classList.add('dark-mode');
+        historyContainer.classList.add('dark-mode');
+        averageContainer.classList.add('dark-mode');
+    }
+
+    // Toggle dark mode
+    darkModeSwitch.addEventListener('click', () => {
+        const isDarkMode = document.body.classList.toggle('dark-mode');
+        historyContainer.classList.toggle('dark-mode');
+        averageContainer.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+    });
+});

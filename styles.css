@@ -68,3 +68,40 @@ body {
     margin-bottom: 30px;
     font-family: Helvetica;
 }
+
+/* Default dark mode styles */
+body.dark-mode {
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+.container.dark-mode {
+    color: #e0e0e0;
+}
+
+.history-container.dark-mode, .average-container.dark-mode {
+    color: #e0e0e0;
+}
+
+#randomButton, #randomButton1, #randomButton2 {
+    background-color: #b71c1c; /* Darker red */
+    color: #fff;
+}
+
+#randomButton:hover, #randomButton1:hover, #randomButton2:hover {
+    background-color: #d32f2f; /* Even darker red */
+}
+
+#darkModeSwitch {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    z-index: 1000; /* Make sure it's above other content */
+    margin-bottom: 20px;
+}
