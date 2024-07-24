@@ -60,6 +60,10 @@ body {
     font-size: 32px;
     margin: 0;
 }
+#clickCount {
+    font-size: 32px;
+    margin: 0;
+}
 .header {
     margin-bottom: 30px;
     font-family: Helvetica;

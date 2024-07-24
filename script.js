@@ -45,14 +45,19 @@ let generatedNumbers = [];
 
 function getWeightedRandomNumber(min, max) {
     const weight = (num) => {
-        if (num >= 80 && num <= 83) return 10;
-        if (num >= 84 && num <= 90) return 3;
-        if (num >= 91 && num <= 99) return 1;
-        return 0;
+        if (num >= 86) return 0.0044; // Adjust weight to achieve ~0.44% chance
+        if (num >= 83) return 0.097; // Adjust weight to achieve ~9.7% chance
+        if (num >= 78) return 1; // Ensure 100% chance for numbers 78 and above
+        return 0; // No chance for numbers below 78
     };
 
+    // Calculate weights for the range [min, max]
     const range = max - min + 1;
-    const totalWeight = Array.from({ length: range }, (_, i) => weight(min + i)).reduce((a, b) => a + b, 0);
+    const weights = Array.from({ length: range }, (_, i) => weight(min + i));
+    const totalWeight = weights.reduce((a, b) => a + b, 0);
+
+    if (totalWeight === 0) return null; // Avoid division by zero if all weights are zero
+
     const random = Math.random() * totalWeight;
     let cumulativeWeight = 0;
 
@@ -60,10 +65,13 @@ function getWeightedRandomNumber(min, max) {
         cumulativeWeight += weight(i);
         if (random < cumulativeWeight) {
             return i;
-        } //test
+        }
     }
-    return max; //2
+
+    return max; // Fallback in case of any floating point imprecision
 }
+
+
 
 function updateAverageMean() {
     const sum = generatedNumbers.reduce((a, b) => a + b, 0);
@@ -71,9 +79,12 @@ function updateAverageMean() {
     averageMean.textContent = average;
 }
 
+let totalClicks = 0;
+
 document.getElementById('randomButton').addEventListener('click', function() {
+    totalClicks++;
     const randomName = forwards[Math.floor(Math.random() * forwards.length)];
-    const randomNumber = getWeightedRandomNumber(80, 99);
+    const randomNumber = getWeightedRandomNumber(78, 99);
     const result = `${randomName} - ${randomNumber}`;
     document.getElementById('randomResult').textContent = result;
 
@@ -83,11 +94,14 @@ document.getElementById('randomButton').addEventListener('click', function() {
     const listItem = document.createElement('li');
     listItem.textContent = result;
     historyList.appendChild(listItem);
+
+    updateClickCount();
 });
 
 document.getElementById('randomButton1').addEventListener('click', function() {
+    totalClicks++;
     const randomName = defensemen[Math.floor(Math.random() * defensemen.length)];
-    const randomNumber = getWeightedRandomNumber(80, 99);
+    const randomNumber = getWeightedRandomNumber(78, 99);
     const result = `${randomName} - ${randomNumber}`;
     document.getElementById('randomResult1').textContent = result;
 
@@ -97,11 +111,14 @@ document.getElementById('randomButton1').addEventListener('click', function() {
     const listItem = document.createElement('li');
     listItem.textContent = result;
     historyList.appendChild(listItem);
+
+    updateClickCount();
 });
 
 document.getElementById('randomButton2').addEventListener('click', function() {
+    totalClicks++;
     const randomName = goalies[Math.floor(Math.random() * goalies.length)];
-    const randomNumber = getWeightedRandomNumber(80, 99);
+    const randomNumber = getWeightedRandomNumber(78, 99);
     const result = `${randomName} - ${randomNumber}`;
     document.getElementById('randomResult2').textContent = result;
 
@@ -111,4 +128,10 @@ document.getElementById('randomButton2').addEventListener('click', function() {
     const listItem = document.createElement('li');
     listItem.textContent = result;
     historyList.appendChild(listItem);
+
+    updateClickCount();
 });
+
+function updateClickCount() {
+    document.getElementById('clickCount').textContent = `${totalClicks}`;
+}
