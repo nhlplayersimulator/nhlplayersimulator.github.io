@@ -92,6 +92,7 @@ body.dark-mode {
     background-color: #d32f2f; /* Even darker red */
 }
 
+
 #darkModeSwitch {
     position: fixed;
     bottom: 20px;
